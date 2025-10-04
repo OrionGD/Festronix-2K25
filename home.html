@@ -132,28 +132,47 @@
 
 /* Mobile breakpoint */
 @media (max-width:640px){
-  .grid {
-    grid-template-columns: 1fr;  /* stack departments */
+/* Mobile-specific improvements */
+@media (max-width:640px){
+
+  /* Lighten blobs for less distraction */
+  .blob {
+    opacity: 0.15;       /* very subtle */
+    filter: blur(50px);  /* slightly softer blur */
   }
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+
+  /* Dark overlay behind content for high contrast */
+  .wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45); /* semi-transparent dark layer */
+    z-index: 1;
+    border-radius: 12px;
   }
-  .title h1 {
-    font-size: 22px;
+
+  /* Ensure text is above overlay */
+  .wrap > * {
+    position: relative;
+    z-index: 5;
   }
-  .side-card {
-    flex-direction: column;      /* stack poster above QR on mobile */
+
+  /* Optional: slightly darken page background gradient */
+  body {
+    background: linear-gradient(180deg, rgba(15,23,36,0.95), rgba(43,27,74,0.95));
   }
-  .poster {
-    max-height: 240px;           /* smaller poster on phones */
+
+  /* Poster & cards adjustments for better contrast */
+  .hero-card, .event-card, .dept, .mini {
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   }
-  .qr img {
-    width: 140px;
-    height: 140px;
+
+  /* Adjust text colors slightly for higher contrast */
+  h1, h2, h3, p, li, time {
+    color: #e6eef8; /* light and readable */
   }
 }
+
 
 
     .bars{position:absolute;left:0;top:0;height:6px;width:100%;display:flex;gap:4px}
