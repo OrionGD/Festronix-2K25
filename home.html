@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FESTRONIX 2K25 — CSE • K.Ramakrishnan College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="FESTRONIX 2K25 — CSE events, HOD & staff, QR register. Create, compete, conquer!" />
+  <style>
+    :root{
+      --bg1:#0f1724; --bg2:#2b1b4a; --accent1:#5eead4; --accent2:#7c3aed;
+      --glass: rgba(255,255,255,0.06); --glass-2: rgba(255,255,255,0.04);
+      --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased}
+
+    .blobs{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .blob{position:absolute;filter:blur(60px);opacity:.7;mix-blend-mode:screen;border-radius:50%;transform:translate3d(0,0,0);}
+    .b1{width:520px;height:520px;background:linear-gradient(135deg,#ff7ab6,#ffdf7a);left:-120px;top:-60px;animation:float1 10s ease-in-out infinite}
+    .b2{width:420px;height:420px;background:linear-gradient(135deg,#7dd3fc,#7c3aed);right:-120px;top:40px;animation:float2 12s ease-in-out infinite}
+    .b3{width:300px;height:300px;background:linear-gradient(135deg,#34d399,#60a5fa);left:30%;bottom:-100px;animation:float3 14s ease-in-out infinite}
+    @keyframes float1{0%{transform:translateY(0)}50%{transform:translateY(30px)}100%{transform:translateY(0)}}
+    @keyframes float2{0%{transform:translateY(0)}50%{transform:translateY(-40px)}100%{transform:translateY(0)}}
+    @keyframes float3{0%{transform:translateY(0)}50%{transform:translateY(50px)}100%{transform:translateY(0)}}
+
+    .wrap{position:relative;z-index:5;max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:20px;margin-bottom:18px}
+    .logo{width:92px;height:92px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;box-shadow:var(--card-shadow);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.04)}
+    .title h1{margin:0;font-family:Rajdhani,Inter,sans-serif;font-size:34px;letter-spacing:1px}
+    .title p{margin:3px 0 0;color:#bcd2ff;font-size:13px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+    .hero-card{background:linear-gradient(180deg,var(--glass),var(--glass-2));border-radius:16px;padding:22px;box-shadow:var(--card-shadow);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.06)}
+
+.poster {
+  width: 100%;                 /* Full width of its container */
+  max-width: 100%;             /* Prevent overflow */
+  height: auto;                /* Height adjusts automatically */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg,#111827,#1f2430);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster img {
+  width: 100%;                 /* Scale to container width */
+  height: auto;                /* Keep aspect ratio */
+  max-height: 80vh;            /* Limit max height to viewport (prevents overflow) */
+  object-fit: contain;         /* Show full poster without cropping */
+}
+
+.poster .shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,rgba(255,255,255,0.03),transparent);
+  mix-blend-mode: overlay;
+}
+
+
+    .meta h2{margin:0 0 8px;font-size:20px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,0.04)}
+    .reg{margin-top:14px;display:flex;gap:12px;align-items:center}
+    .reg .price{font-size:20px;font-weight:800;color:var(--accent1)}
+    .btn{background:linear-gradient(90deg,var(--accent2),#06b6d4);padding:10px 14px;border-radius:10px;color:#061025;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(7,12,34,0.6)}
+
+    .grid{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .dept{padding:14px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px)}
+    .dept h3{margin:0 0 8px;font-size:16px}
+    .dept ul{margin:0;padding-left:16px;color:#cbe9ff}
+    .dept li{margin:6px 0;font-size:14px}
+
+    .side-card{display:flex;flex-direction:column;gap:12px}
+    .mini{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04)}
+    .qr{display:grid;place-items:center;padding:10px}
+    .qr img{width:180px;height:180px;object-fit:contain;border-radius:8px}
+
+    footer{margin-top:22px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;font-size:13px}
+
+/* Smooth transition on base, not only on hover */
+.hero-card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(7,12,34,0.7); /* slightly stronger shadow */
+}
+
+.dept {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.dept:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(7,12,34,0.5);
+}
+
+/* Buttons hover */
+.btn {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(7,12,34,0.6);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+
+/* Tablet breakpoint */
+@media (max-width:980px){
+  .hero {
+    grid-template-columns: 1fr;   /* stack hero-card + side-card */
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .poster {
+    height: auto;                /* let poster scale naturally */
+    max-height: 320px;           /* still keep it from getting too tall */
+  }
+  .side-card {
+    flex-direction: row;         /* put poster + QR side by side on tablets */
+    gap: 16px;
+  }
+  .side-card .mini {
+    flex: 1;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width:640px){
+  .grid {
+    grid-template-columns: 1fr;  /* stack departments */
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .title h1 {
+    font-size: 22px;
+  }
+  .side-card {
+    flex-direction: column;      /* stack poster above QR on mobile */
+  }
+  .poster {
+    max-height: 240px;           /* smaller poster on phones */
+  }
+  .qr img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+    .bars{position:absolute;left:0;top:0;height:6px;width:100%;display:flex;gap:4px}
+    .bars span{height:6px;border-radius:4px;background:linear-gradient(90deg,rgba(255,255,255,0.04),transparent);flex:1}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+    .reveal.on{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="blobs" aria-hidden>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="bars"><span style="width:12%"></span><span style="width:18%"></span><span style="width:6%"></span><span style="width:32%"></span></div>
+
+    <header>
+      <div class="logo"><strong style="color:#fff;font-family:Rajdhani;font-size:20px"><img src="logo.png" alt="KRCT Logo" class="logo"></strong></div>
+      <div class="title">
+       <strong> <h1>FESTRONIX <span style="opacity:.85">2K25</span></h1></strong>
+        <p>National Level Technical Symposium <br>  <br> <a class="btn" href="https://krct.ac.in/">K.Ramakrishnan College of Technology </a><br><br> Samayapuram</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card reveal" id="leftCard">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div>
+            <h2>Computer Science & Engineering — CSE</h2>
+            <div style="color:#a9d6ff">HOD: <strong>Mr. R. Rajavarman</strong></div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:800;font-size:28px;color:white">15<br><span style="font-size:13px;opacity:.6">OCT 2025</span></div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <div class="chip">Paper Presentation</div>
+          <div class="chip">Ideathon</div>
+          <div class="chip">Video Editing</div>
+          <div class="chip">Free Fire</div>
+          <div class="chip">ConnectionX</div>
+          <div class="chip">TuneSeek</div>
+        </div>
+
+        <div class="grid" style="margin-top:16px">
+          <div class="dept">
+            <h3>Technical</h3>
+            <ul>
+              <li>Paper Presentation</li>
+              <li>Ideathon — Ms. M. Suriya</li>
+              <li>Video Editing — Ms. V. Sowmiya</li>
+            </ul>
+          </div>
+          <div class="dept">
+            <h3>Non-Technical</h3>
+            <ul>
+              <li>Free Fire — Mrs. V. Kalpana</li>
+              <li>ConnectionX — Mrs. A. Dhivya Bharathi</li>
+              <li>TuneSeek — Mrs. K. Vallipriyadharshini</li>
+            </ul>
+          </div>
+          <div class="dept">
+            <h3>Rules & Notes</h3>
+            <ul>
+              <li>No spot registration for paper presentation</li>
+              <li>Maximum two members per team (paper presentation)</li>
+              <li>Registration Fee: ₹250 per head</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:20px">
+          <h3 style="margin:0 0 6px;color:#93b7ff">Faculty Coordinator</h3>
+          <div style="font-weight:700">Ms. S. Uma Mageshwari<br><small style="font-weight:600;color:#a9d6ff">umamageshwaris.cse@krct.ac.in • +91 9952625356</small></div>
+        </div>
+
+        <div style="margin-top:16px">
+          <h3 style="margin:0 0 6px;color:#93b7ff">Student Coordinators</h3>
+          <div style="font-weight:700">T.R. Godfrey <br><small style="font-weight:600;color:#a9d6ff">+91 9344462238</small></div>
+          <div style="font-weight:700;margin-top:6px">A. Abdul Razeek <br><small style="font-weight:600;color:#a9d6ff">+91 8438044780</small></div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:20px;align-items:center">
+          <a class="btn" href="https://forms.gle/8jno1fEaUNZ6xJcP7">Register</a>
+          <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:#bcd2ff;font-weight:700" href="event.html">More Details</a>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="mini poster" style="min-height:220px">
+          <img src="poster.jpg" alt="FESTRONIX 2K25 Official Event Poster">
+          <div class="shine"></div>
+        </div>
+
+        <div class="mini qr">
+          <h4 style="margin:6px 0 8px">Scan to Register</h4>
+          <a href="qr.jpg" target="_blank" style="display:inline-block"><img src="qr.jpg" alt="QR Code for FESTRONIX 2K25 Registration"></a>
+          <div style="margin-top:8px;text-align:center;color:#bcd2ff">Fee: <strong style="color:var(--accent1)">₹250 / head</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© 2025 KRCT<strong>  DEPARTMENT OF COMPUTER SCIENCES AND ENGINEERING..</strong></div>
+      <div style="opacity:.8">All Rights Reserved</div>
+    </footer>
+  </div>
+
+  <script>
+    const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('on')})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(n=>obs.observe(n));
+
+    const wrap = document.querySelector('.wrap');
+    document.addEventListener('mousemove', (e)=>{
+      const x = (e.clientX - window.innerWidth/2)/50;
+      const y = (e.clientY - window.innerHeight/2)/60;
+      document.querySelectorAll('.blob').forEach((b,i)=>{b.style.transform = `translate3d(${x*(i+1)}px, ${y*(i+1)}px, 0)`});
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FESTRONIX 2K25 — Agenda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f1724; --bg2:#2b1b4a; --accent1:#5eead4; --accent2:#7c3aed;
+      --glass: rgba(255,255,255,0.06); --glass-2: rgba(255,255,255,0.04);
+      --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+    /* Blobs */
+    .blobs{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .blob{position:absolute;filter:blur(60px);opacity:.7;mix-blend-mode:screen;border-radius:50%;}
+    .b1{width:520px;height:520px;background:linear-gradient(135deg,#ff7ab6,#ffdf7a);left:-120px;top:-60px;animation:float1 10s ease-in-out infinite}
+    .b2{width:420px;height:420px;background:linear-gradient(135deg,#7dd3fc,#7c3aed);right:-120px;top:40px;animation:float2 12s ease-in-out infinite}
+    .b3{width:300px;height:300px;background:linear-gradient(135deg,#34d399,#60a5fa);left:30%;bottom:-100px;animation:float3 14s ease-in-out infinite}
+    @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(30px)}}
+    @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
+    @keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(50px)}}
+
+    .wrap{position:relative;z-index:5;max-width:1000px;margin:0 auto;padding:28px;flex:1;display:flex;flex-direction:column}
+
+    /* Navbar */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(255,255,255,0.04);border-radius:12px;backdrop-filter:blur(8px);margin-bottom:24px}
+    nav .brand{font-family:Rajdhani;font-size:22px;font-weight:700;color:white}
+    nav ul{list-style:none;display:flex;gap:16px}
+    nav a{text-decoration:none;color:#cbe9ff;font-weight:600;font-size:14px;transition:color .25s}
+    nav a:hover{color:var(--accent1)}
+
+    /* Agenda timeline */
+    .timeline{position:relative;margin:20px 0;padding-left:30px;border-left:2px solid rgba(255,255,255,0.1)}
+    .event{margin-bottom:24px;position:relative;padding:16px 18px;border-radius:12px;background:linear-gradient(180deg,var(--glass),var(--glass-2));border:1px solid rgba(255,255,255,0.08);box-shadow:var(--card-shadow);backdrop-filter:blur(6px);transition:transform .3s,box-shadow .3s}
+    .event:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(7,12,34,0.6)}
+    .event::before{content:"";position:absolute;left:-38px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--accent1);box-shadow:0 0 10px var(--accent1)}
+    .event h3{margin:0 0 6px;color:var(--accent1);font-size:18px}
+    .event time{font-size:13px;color:#bcd2ff;font-weight:600}
+    .event p{margin-top:6px;font-size:14px;color:#d6e5ff;line-height:1.5}
+
+    footer{margin-top:28px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+
+    @media(max-width:640px){nav ul{flex-direction:column;gap:8px}.timeline{padding-left:20px}.event{padding:14px}}
+  </style>
+</head>
+<body>
+  <div class="blobs" aria-hidden>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="wrap">
+    <!-- Navbar -->
+    <nav>
+      <div class="brand">FESTRONIX 2K25</div>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="event.html">Events</a></li>
+      </ul>
+    </nav>
+
+    <!-- Agenda Timeline -->
+    <h1 style="font-family:Rajdhani;font-size:28px;margin-bottom:20px;color:white">Agenda — October 15, 2025</h1>
+
+    <div class="timeline">
+      <div class="event">
+        <h3>Registration & Welcome Kit</h3>
+        <time>08:30 AM – 09:30 AM</time>
+        <p>Participants check-in, collect welcome kits, and get seated in the auditorium.</p>
+      </div>
+
+      <div class="event">
+        <h3>Inaugural Ceremony</h3>
+        <time>09:30 AM – 10:30 AM</time>
+        <p>Chief Guest address, lighting of the lamp, and overview of the symposium schedule.</p>
+      </div>
+
+      <div class="event">
+        <h3>Paper Presentation</h3>
+        <time>10:45 AM – 12:30 PM</time>
+        <p>Technical paper sessions across parallel halls, judged by faculty and industry experts.</p>
+      </div>
+
+      <div class="event">
+        <h3>Lunch Break</h3>
+        <time>12:30 PM – 01:30 PM</time>
+        <p>Refreshments and networking among participants and coordinators.</p>
+      </div>
+
+      <div class="event">
+        <h3>Non-Technical Events</h3>
+        <time>01:30 PM – 03:00 PM</time>
+        <p>Fun and engaging contests including Free Fire, ConnectionX, and TuneSeek.</p>
+      </div>
+
+      <div class="event">
+        <h3>Ideathon Finals</h3>
+        <time>03:00 PM – 04:00 PM</time>
+        <p>Shortlisted teams pitch their innovative ideas to a panel of judges.</p>
+      </div>
+
+      <div class="event">
+        <h3>Valedictory & Prize Distribution</h3>
+        <time>04:15 PM – 05:00 PM</time>
+        <p>Winners are awarded and the symposium concludes with a vote of thanks.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>© 2025 KRCT <strong>Department of Computer Science and Engineering</strong></div>
+      <div style="opacity:.8">All Rights Reserved</div>
+    </footer>
+  </div>
+
+  <script>
+    // Blob parallax effect
+    document.addEventListener('mousemove', (e)=>{
+      const x = (e.clientX - window.innerWidth/2)/50;
+      const y = (e.clientY - window.innerHeight/2)/60;
+      document.querySelectorAll('.blob').forEach((b,i)=>{
+        b.style.transform = `translate3d(${x*(i+1)}px, ${y*(i+1)}px, 0)`;
+      });
+    });
+  </script>
+</body>
+</html>
