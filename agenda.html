@@ -43,8 +43,47 @@
     .event p{margin-top:6px;font-size:14px;color:#d6e5ff;line-height:1.5}
 
     footer{margin-top:28px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+/* Mobile-specific improvements */
+@media (max-width:640px){
 
-    @media(max-width:640px){nav ul{flex-direction:column;gap:8px}.timeline{padding-left:20px}.event{padding:14px}}
+  /* Lighten blobs for less distraction */
+  .blob {
+    opacity: 0.15;       /* very subtle */
+    filter: blur(50px);  /* slightly softer blur */
+  }
+
+  /* Dark overlay behind content for high contrast */
+  .wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45); /* semi-transparent dark layer */
+    z-index: 1;
+    border-radius: 12px;
+  }
+
+  /* Ensure text is above overlay */
+  .wrap > * {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Optional: slightly darken page background gradient */
+  body {
+    background: linear-gradient(180deg, rgba(15,23,36,0.95), rgba(43,27,74,0.95));
+  }
+
+  /* Poster & cards adjustments for better contrast */
+  .hero-card, .event-card, .dept, .mini {
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  }
+
+  /* Adjust text colors slightly for higher contrast */
+  h1, h2, h3, p, li, time {
+    color: #e6eef8; /* light and readable */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -130,3 +169,4 @@
   </script>
 </body>
 </html>
+
